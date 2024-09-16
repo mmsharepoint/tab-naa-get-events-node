@@ -8,6 +8,7 @@ import Axios from "axios";
 import { Button } from '@fluentui/react-components';
 import { IEvents } from "../../models/Events";
 import { ListEvent } from "./ListEvent";
+import { start } from "repl";
 
 export const Naa: React.FC<{}> = () => {
   const [events, setEvents] = React.useState<IEvents[]>([]);
@@ -52,6 +53,7 @@ export const Naa: React.FC<{}> = () => {
         setLoggedin(true);
         // Call your API with token
         console.log(accessTokenResponse.accessToken);
+        callEvents(accessTokenResponse.accessToken);
       })
       .catch(function (error) {
         console.log(error);
@@ -71,7 +73,7 @@ export const Naa: React.FC<{}> = () => {
 
   const apicall = async () => {
     if (loggedin) {
-      callEvents();
+      callEvents(token);
     }
     else {
       let isNAAResults = await nestedAppAuth.isNAAChannelRecommended();
@@ -81,24 +83,31 @@ export const Naa: React.FC<{}> = () => {
           console.log(_client);
           getAccount();
         });
+      } 
+      {
+
       }
     }
   };
 
-  const callEvents = async () => {
+  const callEvents = async (accessToken: string) => {
     const currentDate = new Date().toISOString();
     Axios.get(`https://graph.microsoft.com/v1.0/me/events?$orderby=start/dateTime desc&$top=5&$select=subject,start,end&$filter=start/dateTime le '${currentDate}'`, 
       {
         responseType: "json",
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${accessToken}`
         }
       }).then(result => {
         console.log(result.data);
         let eventResult: IEvents[] = [];
         result.data.value.forEach((element: any) => {
+          let start: string = element.start.dateTime as string;
+          start = start.substring(0,10) + " " + start.substring(12,19);
+          let end: string = element.end.dateTime as string;
+          end = end.substring(0,10) + " " + end.substring(12,19);
           eventResult.push(
-            { Subject: element.subject, Start: element.start.dateTime, End: element.end.dateTime } // Modify dates
+            { Id: element.id, Subject: element.subject, Start: start, End: end }
           )
         });
         setEvents(eventResult);        
@@ -116,7 +125,7 @@ export const Naa: React.FC<{}> = () => {
       <div>
         <ul>
           {events.map(rel => (
-            <ListEvent Subject={rel.Subject} Start={rel.Start} End={rel.End} />
+            <ListEvent Id={rel.Id} Subject={rel.Subject} Start={rel.Start} End={rel.End} />
           ))}
         </ul>
       </div>

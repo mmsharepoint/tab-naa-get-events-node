@@ -1,5 +1,6 @@
 export interface IEvents {
-	Subject: string;
+	Id: string;
+  Subject: string;
 	Start: string;
 	End: string;
 }

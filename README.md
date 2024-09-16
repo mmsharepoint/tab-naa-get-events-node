@@ -44,3 +44,4 @@ Version|Date|Author|Comments
   
 ## Features
 - [Nested app authentication](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/authentication/nested-authentication?tabs=js&WT.mc_id=M365-MVP-5004617)
+- [Query latest event via Microsoft Graph and OAuth](https://learn.microsoft.com/en-us/graph/query-parameters?view=graph-rest-1.0&tabs=http&WT.mc_id=M365-MVP-5004617)

@@ -4,7 +4,7 @@ import { IEvents } from "../../models/Events";
 export const ListEvent: React.FC<IEvents> = (evt: IEvents) => {
 
   return (
-    <li>
+    <li key={evt.Id}>
       <div>
         {evt.Subject}
       </div>
