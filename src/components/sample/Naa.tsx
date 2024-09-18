@@ -8,7 +8,7 @@ import Axios from "axios";
 import { Button } from '@fluentui/react-components';
 import { IEvents } from "../../models/Events";
 import { ListEvent } from "./ListEvent";
-import { start } from "repl";
+import "./Naa.css"
 
 export const Naa: React.FC<{}> = () => {
   const [events, setEvents] = React.useState<IEvents[]>([]);
@@ -118,8 +118,8 @@ export const Naa: React.FC<{}> = () => {
   }
 
   return (
-    <div>
-      <div className="">
+    <div className="block">
+      <div>
         <h1>Last Events</h1>
       </div>
       <div>

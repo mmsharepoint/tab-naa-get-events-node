@@ -1,11 +1,12 @@
 import React from "react";
 import { IEvents } from "../../models/Events";
+import "./ListEvent.css";
 
 export const ListEvent: React.FC<IEvents> = (evt: IEvents) => {
 
   return (
     <li key={evt.Id}>
-      <div>
+      <div className="subject">
         {evt.Subject}
       </div>
       <div>

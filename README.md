@@ -2,13 +2,18 @@
 
 ## Summary
 
-This app describes how to establish the Teams Tab Nested app authentication. 
+This app describes how to establish a Teams Tab Nested app authentication. 
 
 
 
 ![Teams Tab to ensure a SharePoint user in current's Team site](assets/Screenshot.png)
 
 For further details see the author's [blog post](https://mmsharepoint.wordpress.com/2024/).
+
+
+## Tools and Frameworks
+
+![drop](https://img.shields.io/badge/Teams&nbsp;Toolkit&nbsp;for&nbsp;VS&nbsp;Code-5.8.1-green.svg)
 
 ## Applies to
 
@@ -18,7 +23,7 @@ This sample was created [using the Teams Toolkit with Visual Studio Code](https:
 
 Version|Date|Author|Comments
 -------|----|----|--------
-1.0|30, 09, 2024|[Markus Moeller](https://twitter.com/moeller2_0)|Initial release
+1.0|Sep 30, 2024|[Markus Moeller](https://twitter.com/moeller2_0)|Initial release
 
 ## Disclaimer
 
@@ -28,10 +33,6 @@ Version|Date|Author|Comments
 - Clone the repository
     ```bash
     git clone https://github.com/mmsharepoint/tab-sso-graph-spo-refresh-node>.git
-    ```
-- Create .env.local from .env.dev
-    ```bash
-    copy .\env\.env.dev .\env\.env.local
     ```
 
 - In Teams Toolkit:
