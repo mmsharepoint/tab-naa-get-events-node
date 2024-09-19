@@ -32,7 +32,7 @@ Version|Date|Author|Comments
 ## Minimal Path to Awesome
 - Clone the repository
     ```bash
-    git clone https://github.com/mmsharepoint/tab-sso-graph-spo-refresh-node>.git
+    git clone https://github.com/mmsharepoint/tab-naa-get-events-node.git
     ```
 
 - In Teams Toolkit:
