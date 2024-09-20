@@ -3,7 +3,7 @@
 ## Summary
 
 This app describes how to establish a Teams Tab Nested app authentication. 
-
+This will establish a small personal Teams application which will try to use nested app application to establish a token on behalf of it a graph api called reading the latest events of the current user.
 
 
 ![Teams Tab to ensure a SharePoint user in current's Team site](assets/Screenshot.png)
